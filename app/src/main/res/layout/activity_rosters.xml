@@ -7,94 +7,124 @@
     android:background="#1A237E"
     android:backgroundTint="#000000"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context="muna.munaleagueandroidapp.Rosters">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="MUNA Basketball"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="0">
-
-            <Button
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/border"
-                android:text="TEAM 1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Rosters"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
-        </View>
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_margin="16dp" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="0" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="1" />
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="1" />
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0">
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="2" />
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 1" />
+                </RelativeLayout>
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="2" />
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="0">
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="3" />
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 2" />
+                </RelativeLayout>
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:layout_row="3" />
-    </GridLayout>
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="1">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 4" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="2">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 5" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="2">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 6" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_row="3">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 7" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/RostersActivityRelativeLayoutStyle"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_row="3">
+
+                    <Button
+                        style="@style/RostersActivityButtonStyle"
+                        android:text="TEAM 8" />
+                </RelativeLayout>
+
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
