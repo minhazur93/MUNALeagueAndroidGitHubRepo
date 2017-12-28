@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A237E"
-    android:backgroundTint="#000000"
+    android:backgroundTint="#0e2845"
     android:orientation="vertical"
     tools:context="muna.munaleagueandroidapp.Rosters">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#42A5F5"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,12 +26,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="sans-serif"
                 android:gravity="center_horizontal"
                 android:text="Rosters"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="16dp" />
+                android:textStyle="bold" />
 
 
             <GridLayout
