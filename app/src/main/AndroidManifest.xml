@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Rosters"></activity>
+        <activity android:name=".Rosters" />
+        <activity android:name=".Rosters2"></activity>
     </application>
 
 </manifest>
