@@ -29,7 +29,7 @@
                 android:layout_margin="16dp"
                 android:fontFamily="sans-serif"
                 android:gravity="center_horizontal"
-                android:text="Rosters"
+                android:text="Select A Team"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
