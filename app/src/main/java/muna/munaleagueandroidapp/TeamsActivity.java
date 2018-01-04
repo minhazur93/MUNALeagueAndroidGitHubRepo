@@ -13,9 +13,15 @@ public class TeamsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teams);
     }
 
-    public void goToRosterActivity(View view){
-        Intent intent= new Intent(this, RosterActivity.class);
-        startActivity(intent);
+    public void goToNextActivity(View view){
+        String mainActivityButtonClicked= getIntent().getStringExtra("MainActivityButtonClicked");
+        if (mainActivityButtonClicked.equals("Rosters")){
+            Intent intent= new Intent(this, RosterActivity.class);
+            startActivity(intent);
+        } else if (mainActivityButtonClicked.equals("Team Challenges")){
+            Intent intent= new Intent(this, TeamChallengesActivity.class);
+            startActivity(intent);
+        }
     }
 
 
