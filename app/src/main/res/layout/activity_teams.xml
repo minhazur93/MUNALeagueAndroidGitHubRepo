@@ -7,7 +7,7 @@
     android:background="#1A237E"
     android:backgroundTint="#0e2845"
     android:orientation="vertical"
-    tools:context="muna.munaleagueandroidapp.Rosters">
+    tools:context="muna.munaleagueandroidapp.TeamsActivity">
 
     <View
         android:layout_width="match_parent"

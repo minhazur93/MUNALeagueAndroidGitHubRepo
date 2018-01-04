@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goToRostersActivity(View view) {
-        Intent intent = new Intent(this, Rosters.class);
+    public void goToTeamsActivity(View view) {
+        Intent intent = new Intent(this, TeamsActivity.class);
         startActivity(intent);
     }
 }
