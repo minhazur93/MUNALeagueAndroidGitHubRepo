@@ -17,9 +17,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Rosters2 extends AppCompatActivity {
+public class RosterActivity extends AppCompatActivity {
 
-    private String TAG = Rosters2.class.getSimpleName();
+    private String TAG = RosterActivity.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView listView;
@@ -32,7 +32,7 @@ public class Rosters2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rosters2);
+        setContentView(R.layout.activity_roster);
 
         playersList = new ArrayList<>();
 
@@ -49,7 +49,7 @@ public class Rosters2 extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(Rosters2.this);
+            pDialog = new ProgressDialog(RosterActivity.this);
             pDialog.setMessage("Loading Statistics...");
             pDialog.setCancelable(false);
             pDialog.show();
@@ -133,7 +133,7 @@ public class Rosters2 extends AppCompatActivity {
              * Updating parsed JSON data into ListView
              * */
             ListAdapter adapter = new SimpleAdapter(
-                    Rosters2.this, playersList,
+                    RosterActivity.this, playersList,
                     R.layout.roster_list_item, new String[]{"Players", "Points", "Rebounds", "Assists"}, new int[]{R.id.textViewPlayerName, R.id.textViewPPG, R.id.textViewRPG, R.id.textViewAPG});
 
             listView.setAdapter(adapter);

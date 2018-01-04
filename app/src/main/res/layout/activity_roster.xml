@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#0e2845"
     android:orientation="vertical"
-    tools:context="muna.munaleagueandroidapp.Rosters2">
+    tools:context="muna.munaleagueandroidapp.RosterActivity">
 
     <View
         android:layout_width="match_parent"
