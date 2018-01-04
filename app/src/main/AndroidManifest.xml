@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TeamsActivity" />
-        <activity android:name=".RosterActivity"></activity>
+        <activity android:name=".RosterActivity" />
+        <activity android:name=".TeamChallengesActivity"></activity>
     </application>
 
 </manifest>
