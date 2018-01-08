@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "575941069296",
+    "firebase_url": "https://munaleagueandroid.firebaseio.com",
+    "project_id": "munaleagueandroid",
+    "storage_bucket": "munaleagueandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575941069296:android:c07fd8c77dcce7c4",
+        "android_client_info": {
+          "package_name": "muna.munaleagueandroidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575941069296-39kucer045i20fg5egmtd783ahfg51ja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "muna.munaleagueandroidapp",
+            "certificate_hash": "b0749f6359cd23def9804596ca09c884a0512775"
+          }
+        },
+        {
+          "client_id": "575941069296-k4vfu49ttu5iati1bmdpfg2aqh32kk73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCadsupcwqd5i1UWLyR468thMs5HrEvKSY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575941069296-k4vfu49ttu5iati1bmdpfg2aqh32kk73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
