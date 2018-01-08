@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MUNALeagueAndroidApp.iml" filepath="$PROJECT_DIR$/MUNALeagueAndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MUNALeagueAndroidGitHubRepo.iml" filepath="$PROJECT_DIR$/MUNALeagueAndroidGitHubRepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
