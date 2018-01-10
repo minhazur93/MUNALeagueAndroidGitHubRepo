@@ -20,4 +20,11 @@
         android:onClick="goToTeamsActivity"
         android:id="@+id/teamChallengesButton"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chat"
+        android:onClick="goToChatActivity"
+        android:id="@+id/chatButton"/>
+
 </LinearLayout>
