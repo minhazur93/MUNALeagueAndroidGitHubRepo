@@ -21,7 +21,8 @@
         <activity android:name=".TeamsActivity" />
         <activity android:name=".RosterActivity" />
         <activity android:name=".TeamChallengesActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".MediaActivity"></activity>
     </application>
 
 </manifest>
