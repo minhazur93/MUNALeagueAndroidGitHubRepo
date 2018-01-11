@@ -94,11 +94,13 @@ public class MainActivity extends AppCompatActivity
 
     private void startTeamChallengesActivity(){
         Intent intent = new Intent(this, TeamChallengesActivity.class);
+        intent.putExtra("MainActivityButtonClicked","Team Challenges");
         startActivity(intent);
     }
 
     private void startRosterActivity(){
-        Intent intent = new Intent(this, RosterActivity.class);
+        Intent intent = new Intent(this, TeamsActivity.class);
+        intent.putExtra("MainActivityButtonClicked","Rosters");
         startActivity(intent);
     }
 }
