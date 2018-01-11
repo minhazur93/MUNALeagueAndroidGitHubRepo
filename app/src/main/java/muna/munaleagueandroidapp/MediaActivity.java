@@ -16,7 +16,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 public class MediaActivity extends AppCompatActivity {
-    ImageView imageView;
 
     private StorageReference storageReference;
 
@@ -24,8 +23,6 @@ public class MediaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media);
-
-        imageView = (ImageView) findViewById(R.id.imageView);
 
         storageReference = FirebaseStorage.getInstance().getReference();
     }
@@ -43,10 +40,6 @@ public class MediaActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 000 && resultCode == RESULT_OK) {
-
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(photo);
-
             Uri uri = data.getData();
             StorageReference filepath = storageReference.child("Photos").child(uri.getLastPathSegment());
             filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

@@ -20,11 +20,6 @@
         android:text="Take Picture"
         android:layout_margin="8dp"
         android:onClick="takePicture"/>
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"/>
 
     <ListView
         android:id="@+id/listViewImages"
