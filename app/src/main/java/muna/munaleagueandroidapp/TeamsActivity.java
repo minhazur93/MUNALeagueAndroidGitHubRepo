@@ -23,10 +23,4 @@ public class TeamsActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
-
-
-
-
 }
