@@ -25,31 +25,30 @@ public class MediaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media);
 
-        imageView= (ImageView) findViewById(R.id.imageView);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
-        storageReference= FirebaseStorage.getInstance().getReference();
+        storageReference = FirebaseStorage.getInstance().getReference();
     }
 
-    public void uploadPhoto(View view){
-        Intent intent= new Intent(Intent.ACTION_PICK);
+    public void uploadPhoto(View view) {
+        Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
-        startActivityForResult(intent, 111);
+        startActivityForResult(intent, 000);
     }
 
-    public void takePicture(View view){
+    public void takePicture(View view) {
         Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cameraIntent, 000);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 000 && resultCode == Activity.RESULT_OK) {
+        if (requestCode == 000 && resultCode == RESULT_OK) {
+
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
-        }
 
-        if (requestCode == 111 && resultCode == Activity.RESULT_OK) {
-            Uri uri= data.getData();
-            StorageReference filepath= storageReference.child("Photos").child(uri.getLastPathSegment());
+            Uri uri = data.getData();
+            StorageReference filepath = storageReference.child("Photos").child(uri.getLastPathSegment());
             filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
