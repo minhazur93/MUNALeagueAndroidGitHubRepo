@@ -19,12 +19,16 @@ public class MediaActivity extends AppCompatActivity {
 
     private StorageReference storageReference;
 
+    ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media);
 
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        imageView = (ImageView) findViewById(R.id.imageView);
     }
 
     public void uploadPhoto(View view) {
@@ -35,7 +39,7 @@ public class MediaActivity extends AppCompatActivity {
 
     public void takePicture(View view) {
         Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, 000);
+        startActivityForResult(cameraIntent, 111);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -50,5 +54,12 @@ public class MediaActivity extends AppCompatActivity {
                 }
             });
         }
+
+        if (requestCode == 111 && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
+
     }
 }
