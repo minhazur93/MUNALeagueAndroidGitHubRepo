@@ -10,11 +10,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActionBarDrawerToggle toggle;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +21,11 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-
-        toggle = new ActionBarDrawerToggle(
-                this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,38 +43,28 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_team_challenges) {
-           startTeamChallengesActivity();
+            startTeamChallengesActivity();
 
-        } else if (id == R.id.nav_team_rosters) {
+        } else if (id == R.id.nav_rosters) {
             startRosterActivity();
 
-
-        } else if (id == R.id.nav_teams) {
-           startTeamsActivity();
-
         } else if (id == R.id.nav_chat) {
-           startChatActivity();
+            startChatActivity();
 
-        }
-        else if (id == R.id.nav_gallery) {
-            Intent intent= new Intent(this, MediaActivity.class);
-            startActivity(intent);
-
+        } else if (id == R.id.nav_gallery) {
+            startMediaActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -88,26 +72,27 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private void startTeamChallengesActivity() {
+        Intent intent = new Intent(this, TeamsActivity.class);
+        intent.putExtra("MainActivityButtonClicked", "Team Challenges");
+        startActivity(intent);
+    }
+
+    private void startRosterActivity() {
+        Intent intent = new Intent(this, TeamsActivity.class);
+        intent.putExtra("MainActivityButtonClicked", "Rosters");
+        startActivity(intent);
+    }
+
     private void startChatActivity() {
         Intent intent = new Intent(this, ChatActivity.class);
         startActivity(intent);
     }
 
-    private void startTeamsActivity() {
-        Intent intent = new Intent(this, TeamsActivity.class);
+    private void startMediaActivity() {
+        Intent intent = new Intent(this, MediaActivity.class);
         startActivity(intent);
     }
 
-    private void startTeamChallengesActivity(){
-        Intent intent = new Intent(this, TeamsActivity.class);
-        intent.putExtra("MainActivityButtonClicked","Team Challenges");
-        startActivity(intent);
-    }
 
-    private void startRosterActivity(){
-        Intent intent = new Intent(this, TeamsActivity.class);
-        intent.putExtra("MainActivityButtonClicked","Rosters");
-        startActivity(intent);
-
-    }
 }
