@@ -47,7 +47,8 @@
 
                     <Button
                         style="@style/RostersActivityButtonStyle"
-                        android:text="TEAM 1" />
+                        android:text="TEAM 1"
+                        android:onClick="goToNextActivity"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -58,7 +59,8 @@
 
                     <Button
                         style="@style/RostersActivityButtonStyle"
-                        android:text="TEAM 2" />
+                        android:text="TEAM 2"
+                        android:onClick="goToNextActivity"/>/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -69,7 +71,8 @@
 
                     <Button
                         style="@style/RostersActivityButtonStyle"
-                        android:text="TEAM 3" />
+                        android:text="TEAM 3"
+                        android:onClick="goToNextActivity"/>/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -80,7 +83,8 @@
 
                     <Button
                         style="@style/RostersActivityButtonStyle"
-                        android:text="TEAM 4" />
+                        android:text="TEAM 4"
+                        android:onClick="goToNextActivity"/>/>
                 </RelativeLayout>
 
                 <RelativeLayout

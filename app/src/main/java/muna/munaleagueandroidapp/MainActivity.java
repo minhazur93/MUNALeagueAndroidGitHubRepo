@@ -1,6 +1,7 @@
 package muna.munaleagueandroidapp;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -76,6 +77,11 @@ public class MainActivity extends AppCompatActivity
            startChatActivity();
 
         }
+        else if (id == R.id.nav_gallery) {
+            Intent intent= new Intent(this, MediaActivity.class);
+            startActivity(intent);
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -93,7 +99,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void startTeamChallengesActivity(){
-        Intent intent = new Intent(this, TeamChallengesActivity.class);
+        Intent intent = new Intent(this, TeamsActivity.class);
         intent.putExtra("MainActivityButtonClicked","Team Challenges");
         startActivity(intent);
     }
@@ -102,5 +108,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, TeamsActivity.class);
         intent.putExtra("MainActivityButtonClicked","Rosters");
         startActivity(intent);
+
     }
 }
