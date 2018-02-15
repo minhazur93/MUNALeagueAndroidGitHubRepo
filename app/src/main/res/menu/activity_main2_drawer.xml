@@ -19,7 +19,7 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Gallery" />
         <item
-            android:id="@+id/nav_avout"
+            android:id="@+id/nav_about"
             android:title="About" />
         <item
             android:id="@+id/nav_contact"
