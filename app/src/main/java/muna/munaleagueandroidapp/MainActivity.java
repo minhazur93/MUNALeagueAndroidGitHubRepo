@@ -1,8 +1,7 @@
 package muna.munaleagueandroidapp;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -18,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    FragmentTransaction fragmentTransaction;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
+        fragmentTransaction= getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.fragmentContainer, new HomeFragment());
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("Home");
+
+        navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,10 +74,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_team_challenges) {
-            startTeamChallengesActivity();
+            openTeamsFragmentForTeamChallenges();
 
-        } else if (id == R.id.nav_rosters) {
-            startRosterActivity();
+        } else if (id == R.id.nav_home) {
+            openHomeFragment();
+
+        }else if (id == R.id.nav_rosters) {
+            //startRosterActivity();
 
         } else if (id == R.id.nav_chat) {
             startChatActivity();
@@ -88,17 +97,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void startTeamChallengesActivity() {
-        Intent intent = new Intent(this, TeamsActivity.class);
-        intent.putExtra("MainActivityButtonClicked", "Team Challenges");
-        startActivity(intent);
+    private void openHomeFragment() {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, new HomeFragment());
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("Home");
     }
 
-    private void startRosterActivity() {
-        Intent intent = new Intent(this, TeamsActivity.class);
-        intent.putExtra("MainActivityButtonClicked", "Rosters");
-        startActivity(intent);
+    private void openTeamsFragmentForTeamChallenges() {
+//        Intent intent = new Intent(this, TeamsActivity.class);
+//        intent.putExtra("MainActivityButtonClicked", "Team Challenges");
+//        startActivity(intent);
+
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, new TeamsFragment());
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("Teams");
     }
+
+//    private void startRosterActivity() {
+//        Intent intent = new Intent(this, TeamsActivity.class);
+//        intent.putExtra("MainActivityButtonClicked", "Rosters");
+//        startActivity(intent);
+//    }
 
     private void startChatActivity() {
         Intent intent = new Intent(this, ChatActivity.class);
