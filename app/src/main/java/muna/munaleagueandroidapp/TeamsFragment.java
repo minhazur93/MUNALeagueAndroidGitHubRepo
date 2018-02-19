@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class TeamsFragment extends Fragment implements View.OnClickListener {
@@ -41,22 +42,11 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-//    public void goToNextActivity(View view){
-//        String mainActivityButtonClicked= getIntent().getStringExtra("MainActivityButtonClicked");
-//        if (mainActivityButtonClicked.equals("Rosters")){
-//            Intent intent= new Intent(this, RosterActivity.class);
-//            startActivity(intent);
-//        } else if (mainActivityButtonClicked.equals("Team Challenges")){
-//            Intent intent= new Intent(this, TeamChallengesActivity.class);
-//            startActivity(intent);
-//        }
-//    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.team1:
-                openTeamChallengesFragment();
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team2:
 
@@ -83,9 +73,17 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void openTeamChallengesFragment() {
-        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new TeamChallengesFragment()).addToBackStack(null);
-        fragmentTransaction.commit();
+    public void openTeamChallengesFragmentOrRostersFragment() {
+        String teamChallengesOrRosters = getArguments().getString("Team Challenges or Rosters");
+        Toast.makeText(getContext(), teamChallengesOrRosters, Toast.LENGTH_LONG).show();
+        if (teamChallengesOrRosters.equals("Team Challenges")) {
+            fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentContainer, new TeamChallengesFragment()).addToBackStack(null);
+            fragmentTransaction.commit();
+        } else if (teamChallengesOrRosters.equals("Rosters")) {
+            fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentContainer, new RostersFragment()).addToBackStack(null);
+            fragmentTransaction.commit();
+        }
     }
 }
