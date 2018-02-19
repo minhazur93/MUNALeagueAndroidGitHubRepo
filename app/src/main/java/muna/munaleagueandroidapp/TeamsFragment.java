@@ -49,33 +49,31 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team2:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team3:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team4:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team5:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team6:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team7:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team8:
-
+                openTeamChallengesFragmentOrRostersFragment();
                 break;
         }
-
     }
 
     public void openTeamChallengesFragmentOrRostersFragment() {
         String teamChallengesOrRosters = getArguments().getString("Team Challenges or Rosters");
-        Toast.makeText(getContext(), teamChallengesOrRosters, Toast.LENGTH_LONG).show();
         if (teamChallengesOrRosters.equals("Team Challenges")) {
             fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer, new TeamChallengesFragment()).addToBackStack(null);

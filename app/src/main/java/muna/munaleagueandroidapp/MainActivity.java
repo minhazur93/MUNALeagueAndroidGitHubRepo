@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void openTeamsFragmentForRosters() {
         Bundle bundle = new Bundle();
-        bundle.putString("TeamChallenges or Rosters", "Rosters");
-        RostersFragment rostersFragment = new RostersFragment();
-        rostersFragment.setArguments(bundle);
+        bundle.putString("Team Challenges or Rosters", "Rosters");
+        TeamsFragment teamsFragment = new TeamsFragment();
+        teamsFragment.setArguments(bundle);
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, rostersFragment).addToBackStack(null);
+        fragmentTransaction.replace(R.id.fragmentContainer, teamsFragment).addToBackStack(null);
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Teams");
     }
