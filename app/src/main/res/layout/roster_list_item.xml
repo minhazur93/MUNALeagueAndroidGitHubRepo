@@ -15,9 +15,9 @@
             android:text="Player Name Goes Here"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:padding="16dp"
+            android:padding="14dp"
             android:id="@+id/textViewPlayerName"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="4dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -25,9 +25,9 @@
             android:text="PPG Goes Here"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:padding="16dp"
+            android:padding="14dp"
             android:id="@+id/textViewPPG"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="4dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -35,9 +35,9 @@
             android:text="RPG Goes Here"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:padding="16dp"
+            android:padding="14dp"
             android:id="@+id/textViewRPG"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="4dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,16 +45,16 @@
             android:text="APG Goes Here"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:padding="16dp"
+            android:padding="14dp"
             android:id="@+id/textViewAPG"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="4dp"/>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#42A5F5"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 </LinearLayout>

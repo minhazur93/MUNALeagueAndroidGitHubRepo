@@ -60,31 +60,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_team_challenges) {
-            openTeamsFragmentForTeamChallenges();
-
-        } else if (id == R.id.nav_home) {
+        if (id == R.id.nav_home) {
             openHomeFragment();
-
+        } else if (id == R.id.nav_team_challenges) {
+            openTeamsFragmentForTeamChallenges();
         } else if (id == R.id.nav_rosters) {
             openTeamsFragmentForRosters();
-
         } else if (id == R.id.nav_chat) {
             startChatActivity();
-
         } else if (id == R.id.nav_gallery) {
             startMediaActivity();
         } else if (id == R.id.nav_about) {
@@ -98,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void openHomeFragment() {
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new HomeFragment());
+        fragmentTransaction.replace(R.id.fragmentContainer, new HomeFragment()).addToBackStack(null);
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Home");
     }
@@ -126,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Teams");
     }
-
 
 
     private void startChatActivity() {
