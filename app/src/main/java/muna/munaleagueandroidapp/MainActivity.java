@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        startActivity(intent);
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new TeamsFragment());
+        fragmentTransaction.replace(R.id.fragmentContainer, new TeamsFragment()).addToBackStack(null);
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Teams");
     }
