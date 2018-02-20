@@ -49,10 +49,10 @@ public class TeamChallengesFragment extends Fragment {
         listViewTeamChallenges = (ListView) view.findViewById(R.id.listViewTeamChallenges);
 
         teamPicked = getArguments().getString("Team that was clicked on");
-        if(teamPicked.equals("team1")){
-            new GetPlayers(rabbiURL, "Rabbi/Minhaz").execute();
-        } else if (teamPicked.equals("team2")) {
-            new GetPlayers(shojibURL, "Shojib/Sahid").execute();
+        if(teamPicked.equals("Rabbi/Minhaz")){
+            new GetPlayers(rabbiURL, teamPicked).execute();
+        } else if (teamPicked.equals("Shojib/Sahid")) {
+            new GetPlayers(shojibURL, teamPicked).execute();
         }
 
         return view;
