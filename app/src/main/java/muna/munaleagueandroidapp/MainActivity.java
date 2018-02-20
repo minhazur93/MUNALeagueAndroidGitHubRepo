@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_rosters) {
             openTeamsFragmentForRosters();
         } else if (id == R.id.nav_chat) {
-            startChatActivity();
+            openChatFragment();
         } else if (id == R.id.nav_gallery) {
             startMediaActivity();
         } else if (id == R.id.nav_about) {
@@ -116,9 +116,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void startChatActivity() {
-        Intent intent = new Intent(this, ChatActivity.class);
-        startActivity(intent);
+    private void openChatFragment() {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, new ChatFragment()).addToBackStack(null);
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("Chat");
     }
 
     private void startMediaActivity() {
