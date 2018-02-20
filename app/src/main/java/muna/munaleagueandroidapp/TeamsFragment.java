@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class TeamsFragment extends Fragment implements View.OnClickListener {
     FragmentTransaction fragmentTransaction;
+    String teamPicked;
+
 
     public TeamsFragment() {
 
@@ -46,27 +48,35 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.team1:
+                teamPicked= "team1";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team2:
+                teamPicked= "team2";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team3:
+                teamPicked= "team3";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team4:
+                teamPicked= "team4";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team5:
+                teamPicked= "team5";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team6:
+                teamPicked= "team6";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team7:
+                teamPicked= "team7";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team8:
+                teamPicked= "team8";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
         }
@@ -75,6 +85,11 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
     public void openTeamChallengesFragmentOrRostersFragment() {
         String teamChallengesOrRosters = getArguments().getString("Team Challenges or Rosters");
         if (teamChallengesOrRosters.equals("Team Challenges")) {
+            Bundle bundle = new Bundle();
+            bundle.putString("Team that was clicked on", teamPicked);
+            TeamChallengesFragment teamChallengesFragment = new TeamChallengesFragment();
+            teamChallengesFragment.setArguments(bundle);
+
             fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer, new TeamChallengesFragment()).addToBackStack(null);
             fragmentTransaction.commit();

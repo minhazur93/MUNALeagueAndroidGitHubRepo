@@ -29,8 +29,11 @@ public class TeamChallengesFragment extends Fragment {
     private ProgressDialog pDialog;
     private ListView listViewTeamChallenges;
     private String TAG = TeamChallengesFragment.class.getSimpleName();
+    String teamPicked;
 
-    private static String url = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=19EwTKPJNESa4UZ8q3SoFy2_qudZoABG3hVif__aCy_0&sheet=Rabbi/Minhaz";
+    private static String rabbiURL = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=19EwTKPJNESa4UZ8q3SoFy2_qudZoABG3hVif__aCy_0&sheet=Rabbi/Minhaz";
+    private static String shojibURL = "https://script.googleusercontent.com/macros/echo?user_content_key=wo_lMP5QQl1JFWjId3yl9wWfXjwzdbmB025POktQyo2hsFyN0lAt4J86TM2Sy8bCJNwP3tXNr4WamdA9xk_rwNF6pn9wofe_OJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1ZsYSbt7G4nMhEEDL32U4DxjO7V7yvmJPXJTBuCiTGh3rUPjpYM_V0PJJG7TIaKpxAap0IVTgyT2-UiMZVbvWN3og5o5ckzmy2CXeyE1uXahs2TNGc8dWk5ZELcMZnvXsKiW3k6MDkf6vOQLzDzS58GhZd1xxiuiA&lib=MbpKbbfePtAVndrs259dhPT7ROjQYJ8yx";
+
     ArrayList<HashMap<String, String>> playersList;
 
 
@@ -44,12 +47,27 @@ public class TeamChallengesFragment extends Fragment {
 
         playersList = new ArrayList<>();
         listViewTeamChallenges = (ListView) view.findViewById(R.id.listViewTeamChallenges);
-        new GetPlayers().execute();
+
+        teamPicked = getArguments().getString("Team that was clicked on");
+        if(teamPicked.equals("team1")){
+            new GetPlayers(rabbiURL, "Rabbi/Minhaz").execute();
+        } else if (teamPicked.equals("team2")) {
+
+        }
+
         return view;
     }
 
 
     class GetPlayers extends AsyncTask<Void, Void, Void> {
+
+        String url;
+        String captainName;
+
+        public GetPlayers(String url, String captainName){
+            this.url= url;
+            this.captainName= captainName;
+        }
 
         @Override
         protected void onPreExecute() {
@@ -65,17 +83,17 @@ public class TeamChallengesFragment extends Fragment {
         protected Void doInBackground(Void... arg0) {
             HttpHandler httpHandler = new HttpHandler();
 
-            // Making a request to url and getting response
+            // Making a request to rabbiURL and getting response
             String jsonStr = httpHandler.makeServiceCall(url);
 
-            Log.e(TAG, "Response from url: " + jsonStr);
+            Log.e(TAG, "Response from rabbiURL: " + jsonStr);
 
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
-                    JSONArray contacts = jsonObj.getJSONArray("Rabbi/Minhaz");
+                    JSONArray contacts = jsonObj.getJSONArray(captainName);
 
                     // looping through All Contacts
                     for (int i = 0; i < contacts.length(); i++) {
