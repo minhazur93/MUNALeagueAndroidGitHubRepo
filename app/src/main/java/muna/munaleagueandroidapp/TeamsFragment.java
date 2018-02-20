@@ -48,35 +48,35 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.team1:
-                teamPicked= "team1";
+                teamPicked= "Shahin/Huzifa";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team2:
-                teamPicked= "team2";
+                teamPicked= "Aldin/Redwan";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team3:
-                teamPicked= "team3";
+                teamPicked= "Shojib/Sahid";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team4:
-                teamPicked= "team4";
+                teamPicked= "Alzaber/Miqdad";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team5:
-                teamPicked= "team5";
+                teamPicked= "Mahi/Hanzala";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team6:
-                teamPicked= "team6";
+                teamPicked= "Ragib/Salah Uddin";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team7:
-                teamPicked= "team7";
+                teamPicked= "Rabbi/Minhaz";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
             case R.id.team8:
-                teamPicked= "team8";
+                teamPicked= "Arek/Mubin";
                 openTeamChallengesFragmentOrRostersFragment();
                 break;
         }
