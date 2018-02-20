@@ -52,7 +52,7 @@ public class TeamChallengesFragment extends Fragment {
         if(teamPicked.equals("team1")){
             new GetPlayers(rabbiURL, "Rabbi/Minhaz").execute();
         } else if (teamPicked.equals("team2")) {
-
+            new GetPlayers(shojibURL, "Shojib/Sahid").execute();
         }
 
         return view;

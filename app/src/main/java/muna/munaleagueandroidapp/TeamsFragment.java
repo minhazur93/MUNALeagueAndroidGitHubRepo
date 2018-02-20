@@ -91,7 +91,7 @@ public class TeamsFragment extends Fragment implements View.OnClickListener {
             teamChallengesFragment.setArguments(bundle);
 
             fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragmentContainer, new TeamChallengesFragment()).addToBackStack(null);
+            fragmentTransaction.replace(R.id.fragmentContainer, teamChallengesFragment).addToBackStack(null);
             fragmentTransaction.commit();
         } else if (teamChallengesOrRosters.equals("Rosters")) {
             fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
