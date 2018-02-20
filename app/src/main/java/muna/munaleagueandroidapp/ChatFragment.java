@@ -35,6 +35,8 @@ public class ChatFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
 
+        listOfMessages = (ListView) rootView.findViewById(R.id.list_of_messages);
+
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
@@ -67,8 +69,6 @@ public class ChatFragment extends Fragment {
             }
         });
 
-        listOfMessages = (ListView) rootView.findViewById(R.id.list_of_messages);
-
         return rootView;
     }
 
@@ -91,9 +91,8 @@ public class ChatFragment extends Fragment {
             }
         };
 
-        if (listOfMessages != null) {
-            listOfMessages.setAdapter(adapter);
-        }
+        listOfMessages.setAdapter(adapter);
+
 
 
     }
