@@ -23,8 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MediaActivity" />
-        <activity android:name=".AboutActivity"
-            android:label="About"></activity>
     </application>
 
 </manifest>
