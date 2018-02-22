@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_gallery) {
             startMediaActivity();
         } else if (id == R.id.nav_about) {
-            startAboutActivity();
+            openAboutFragment();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -128,9 +128,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-    private void startAboutActivity() {
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
+    private void openAboutFragment() {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, new AboutFragment()).addToBackStack(null);
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle("About");
     }
 
 
