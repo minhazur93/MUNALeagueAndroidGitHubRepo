@@ -25,9 +25,6 @@
             android:id="@+id/nav_about"
             android:title="About" />
         <item
-            android:id="@+id/nav_contact"
-            android:title="Contact" />
-        <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
             android:title="Share" />
