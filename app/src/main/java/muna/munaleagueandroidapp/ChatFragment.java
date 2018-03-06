@@ -41,11 +41,7 @@ public class ChatFragment extends Fragment {
             // Start sign in/sign up activity
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
         } else {
-            // User is already signed in. Therefore, display
-            // a welcome Toast
             Toast.makeText(getActivity(), "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
-
-            // Load chat room contents
             displayChatMessages();
         }
 
@@ -59,12 +55,9 @@ public class ChatFragment extends Fragment {
                     return;
                 }
 
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
                 FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
                 Toast.makeText(getContext(), input.getText().toString(), Toast.LENGTH_SHORT).show();
 
-                // Clear the input
                 input.setText("");
             }
         });
@@ -76,25 +69,16 @@ public class ChatFragment extends Fragment {
         adapter = new FirebaseListAdapter<ChatMessage>(getActivity(), ChatMessage.class, R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
-                // Get references to the views of message.xml
                 TextView messageText = (TextView) v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView) v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView) v.findViewById(R.id.message_time);
-
-                // Set their text
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
-
-                // Format the date before showing it
-                messageTime.setText(DateFormat.format("h:mm a",
-                        model.getMessageTime()));
+                messageTime.setText(DateFormat.format("h:mm a", model.getMessageTime()));
             }
         };
 
         listOfMessages.setAdapter(adapter);
-
-
-
     }
 
     @Override
@@ -107,12 +91,9 @@ public class ChatFragment extends Fragment {
                 displayChatMessages();
             } else {
                 Toast.makeText(getActivity(), "We couldn't sign you in. Please try again later.", Toast.LENGTH_LONG).show();
-
-                // Close the app
                 getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
             }
         }
-
     }
 
 }
