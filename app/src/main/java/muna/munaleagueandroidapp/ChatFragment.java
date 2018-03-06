@@ -38,7 +38,6 @@ public class ChatFragment extends Fragment {
         listOfMessages = (ListView) rootView.findViewById(R.id.list_of_messages);
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            // Start sign in/sign up activity
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
         } else {
             Toast.makeText(getActivity(), "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
@@ -54,10 +53,8 @@ public class ChatFragment extends Fragment {
                 if (input.getText().toString().length() == 0) {
                     return;
                 }
-
                 FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
                 Toast.makeText(getContext(), input.getText().toString(), Toast.LENGTH_SHORT).show();
-
                 input.setText("");
             }
         });
@@ -77,7 +74,6 @@ public class ChatFragment extends Fragment {
                 messageTime.setText(DateFormat.format("h:mm a", model.getMessageTime()));
             }
         };
-
         listOfMessages.setAdapter(adapter);
     }
 
@@ -95,5 +91,13 @@ public class ChatFragment extends Fragment {
             }
         }
     }
+
+
+
+
+
+
+
+
 
 }
