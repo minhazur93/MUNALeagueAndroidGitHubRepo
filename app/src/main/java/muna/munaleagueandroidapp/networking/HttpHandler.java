@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.networking;
 
 import android.util.Log;
 import java.io.BufferedInputStream;

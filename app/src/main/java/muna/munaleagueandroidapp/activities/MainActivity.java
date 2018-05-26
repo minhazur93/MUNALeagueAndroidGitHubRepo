@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.activities;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import muna.munaleagueandroidapp.fragments.HomeFragment;
+import muna.munaleagueandroidapp.R;
+import muna.munaleagueandroidapp.fragments.TeamsFragment;
+import muna.munaleagueandroidapp.fragments.AboutFragment;
+import muna.munaleagueandroidapp.fragments.ChatFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

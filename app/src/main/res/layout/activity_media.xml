@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="muna.munaleagueandroidapp.MediaActivity">
+    tools:context="muna.munaleagueandroidapp.activities.MediaActivity">
 
 </android.support.constraint.ConstraintLayout>

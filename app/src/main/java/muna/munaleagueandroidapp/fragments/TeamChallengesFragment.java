@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.fragments;
 
 
 import android.app.ProgressDialog;
@@ -20,6 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import muna.munaleagueandroidapp.R;
+import muna.munaleagueandroidapp.networking.HttpHandler;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 

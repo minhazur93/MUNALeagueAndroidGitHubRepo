@@ -1,7 +1,9 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import muna.munaleagueandroidapp.R;
 
 public class MediaActivity extends AppCompatActivity {
 
