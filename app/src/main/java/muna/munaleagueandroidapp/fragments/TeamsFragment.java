@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.fragments;
 
 
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import muna.munaleagueandroidapp.R;
 
 
 public class TeamsFragment extends Fragment implements View.OnClickListener {

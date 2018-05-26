@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.fragments;
 
 
 import android.content.Intent;
@@ -17,8 +17,10 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import muna.munaleagueandroidapp.model.ChatMessage;
+import muna.munaleagueandroidapp.R;
 
 
 public class ChatFragment extends Fragment {

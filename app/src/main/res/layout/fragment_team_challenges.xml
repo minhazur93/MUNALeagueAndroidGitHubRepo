@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:background="#0e2845"
         android:orientation="vertical"
-        tools:context="muna.munaleagueandroidapp.TeamChallengesFragment">
+        tools:context="muna.munaleagueandroidapp.fragments.TeamChallengesFragment">
 
         <LinearLayout
             android:layout_width="match_parent"

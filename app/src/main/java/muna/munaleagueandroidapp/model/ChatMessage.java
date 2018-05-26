@@ -1,4 +1,4 @@
-package muna.munaleagueandroidapp;
+package muna.munaleagueandroidapp.model;
 
 import java.util.Date;
 
