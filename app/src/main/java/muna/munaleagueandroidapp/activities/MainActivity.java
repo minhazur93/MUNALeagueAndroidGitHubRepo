@@ -1,21 +1,22 @@
 package muna.munaleagueandroidapp.activities;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import muna.munaleagueandroidapp.fragments.HomeFragment;
 import muna.munaleagueandroidapp.R;
-import muna.munaleagueandroidapp.fragments.TeamsFragment;
 import muna.munaleagueandroidapp.fragments.AboutFragment;
 import muna.munaleagueandroidapp.fragments.ChatFragment;
+import muna.munaleagueandroidapp.fragments.HomeFragment;
+import muna.munaleagueandroidapp.fragments.TeamsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -39,10 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.fragmentContainer, new HomeFragment());
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Home");
+        beginFragmentTransactions(fragmentTransaction,new HomeFragment(),"Home");
 
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
@@ -91,10 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void openHomeFragment() {
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new HomeFragment()).addToBackStack(null);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Home");
+        beginFragmentTransactions(fragmentTransaction,new HomeFragment(),"Home");
     }
 
     private void openTeamsFragmentForTeamChallenges() {
@@ -102,11 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bundle.putString("Team Challenges or Rosters", "Team Challenges");
         TeamsFragment teamsFragment = new TeamsFragment();
         teamsFragment.setArguments(bundle);
-
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, teamsFragment).addToBackStack(null);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Teams");
+        beginFragmentTransactions(fragmentTransaction,teamsFragment,"Teams");
     }
 
     private void openTeamsFragmentForRosters() {
@@ -114,19 +105,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bundle.putString("Team Challenges or Rosters", "Rosters");
         TeamsFragment teamsFragment = new TeamsFragment();
         teamsFragment.setArguments(bundle);
+        beginFragmentTransactions(fragmentTransaction,teamsFragment,"Teams");
 
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, teamsFragment).addToBackStack(null);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Teams");
     }
 
 
     private void openChatFragment() {
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new ChatFragment()).addToBackStack(null);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Chat");
+        beginFragmentTransactions(fragmentTransaction,new ChatFragment(),"Chat");
     }
 
     private void startMediaActivity() {
@@ -135,11 +120,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void openAboutFragment() {
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new AboutFragment()).addToBackStack(null);
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("About");
+        beginFragmentTransactions(fragmentTransaction, new AboutFragment(),"About");
     }
 
-
+    private void beginFragmentTransactions (FragmentTransaction fragmentTransaction, Fragment fragment, String actionBarTitle){
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment).addToBackStack(null);
+        fragmentTransaction.commit();
+        getSupportActionBar().setTitle(actionBarTitle);
+    }
 }
